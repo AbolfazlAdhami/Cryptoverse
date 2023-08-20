@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+
 :root {
   --text-primary: #000;
   --bgPrimary: #fff;
@@ -6,12 +8,12 @@
   --light-blue: #e6f7ff;
   --border: #d9d9d9;
 }
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
 
 body {
   width: 100vw;
   height: 100%;
   overflow-x: hidden;
+  background-color: var(--bgPrimary) !important;
 }
 html {
   font-family: "Josefin Sans", sans-serif !important;
@@ -25,9 +27,14 @@ html {
 a:hover {
   color: var(--pink) !important;
 }
+a {
+  color: var(--light-blue);
+  text-decoration: none;
+}
 a .app {
   display: flex;
   overflow: hidden;
+  color: var(--light-blue);
 }
 
 .navbar {
