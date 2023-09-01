@@ -42,7 +42,7 @@ function Navbar() {
         </Button>
       </div>
       {activeMenu && (
-        <Menu theme="dark">
+        <Menu theme="dark" className="menu-provider">
           <Menu.Item icon={<HomeOutlined />}>
             <NavLink to="/">Home</NavLink>
           </Menu.Item>

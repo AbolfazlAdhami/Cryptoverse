@@ -1,4 +1,4 @@
-const News = () => {
+const News = ({ simplefied }) => {
   return <div>News</div>;
 };
 

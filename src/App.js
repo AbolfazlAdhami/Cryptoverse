@@ -3,7 +3,10 @@ import { Navbar, Home, Exchanges, Crypto, Cryptocurrencies, News } from "./compo
 import { Layout, Space, Typography } from "antd";
 import { Link } from "react-router-dom";
 
+// import 'dotenv/config'
+
 function App() {
+  console.log(process.env.X_RapidAPI_Key);
   return (
     <div className="app">
       <div className="navbar">
