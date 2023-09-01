@@ -1,5 +1,5 @@
 import React, { useDeferredValue, useEffect, useState, useTransition } from "react";
-import { Row, Col, Card, Input } from "antd";
+import { Row, Col, Card, Input, Skeleton } from "antd";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import { CryptoCard } from "../";
 function Cryptocurrencies({ simplefied }) {
@@ -17,7 +17,25 @@ function Cryptocurrencies({ simplefied }) {
     });
   }, [search, cryptoList]);
 
-  if (isFetching) return "is Loading";
+  if (isFetching)
+    return (
+      <>
+        <Row gutter={[32, 32]} className="crypto-card-container">
+          {Array(10)
+            .fill("_")
+            .map((index) => (
+              <Col xs={24} sm={12} lg={6} className="crypto-card" key={index}>
+                <Card loading title={<Skeleton.Button block active />} extra={<Skeleton.Avatar active />} hoverable>
+                  <p>Price: USD</p>
+                  <p>Market Cap: </p>
+                  <p>Daily Changes: </p>
+                </Card>
+              </Col>
+            ))}
+        </Row>
+      </>
+    );
+
   return (
     <>
       {!simplefied ? (
