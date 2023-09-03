@@ -319,6 +319,10 @@ a.active {
   display: flex !important;
   justify-content: space-between !important;
 }
+.news-image-containe img {
+  max-width: 200px;
+  max-height: 200px;
+}
 .news-title {
   width: 70%;
 }

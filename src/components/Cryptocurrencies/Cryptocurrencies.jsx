@@ -22,7 +22,7 @@ function Cryptocurrencies({ simplefied }) {
       <>
         <Row gutter={[32, 32]} className="crypto-card-container">
           {Array(10)
-            .fill("_")
+            .fill(" ")
             .map((index) => (
               <Col xs={24} sm={12} lg={6} className="crypto-card" key={index}>
                 <Card loading title={<Skeleton.Button block active />} extra={<Skeleton.Avatar active />} hoverable>

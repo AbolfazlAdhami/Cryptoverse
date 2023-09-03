@@ -3,8 +3,6 @@ import Card from "antd/es/card/Card";
 import { Link } from "react-router-dom";
 import millify from "millify";
 
-
-
 const CryptoCard = ({ uuid, name, rank, iconUrl, price, marketCap, change }) => {
   return (
     <Link to={`/crypto/${uuid}`}>
