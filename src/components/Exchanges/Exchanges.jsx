@@ -17,7 +17,7 @@ const Exchanges = () => {
   return (
     <>
       <Row style={{ padding: "2rem" }}>
-        <Typography.Title level={1}>This Featur is Not Ready today</Typography.Title>
+        <Typography.Title level={1}>This Page is Not Ready today</Typography.Title>
       </Row>
       {/* <Row>
         <Col span={6}>Exchanges</Col>
