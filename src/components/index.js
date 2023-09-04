@@ -5,3 +5,5 @@ export { default as Cryptocurrencies } from "./Cryptocurrencies/Cryptocurrencies
 export { default as Crypto } from "./Crypto/Crypto";
 export { default as News } from "./News/News";
 export { default as CryptoCard } from "./CryptoCard/CryptoCard";
+export { default as Loader } from "./Loader/Loader";
+export { default as LineChart } from "./LineChart/LineChart";
