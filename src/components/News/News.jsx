@@ -45,7 +45,7 @@ const News = ({ simplefied }) => {
         </Row>
       </>
     );
-  console.log(data);
+
   return (
     <>
       <Row gutter={[24, 24]} style={{ padding: "1rem" }}>

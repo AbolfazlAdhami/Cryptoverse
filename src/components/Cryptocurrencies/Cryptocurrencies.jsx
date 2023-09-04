@@ -15,8 +15,8 @@ function Cryptocurrencies({ simplefied }) {
       const filterdCryptos = cryptoList?.data?.coins.filter((crypto) => crypto.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
       setCryptos(filterdCryptos);
     });
+    console.log(cryptoList);
   }, [search, cryptoList]);
-
   if (isFetching)
     return (
       <>
