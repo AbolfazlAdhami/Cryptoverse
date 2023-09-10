@@ -13,46 +13,50 @@ const Exchanges = () => {
   const { data, isFetching } = useGetExchangesQuery();
 
   if (isFetching) return <Loader />;
+  const exchangesList = data?.data?.coins;
 
   return (
     <>
-      <Row style={{ padding: "2rem" }}>
-        <Typography.Title level={1}>This Page is Not Ready today</Typography.Title>
-      </Row>
-      {/* <Row>
+      <Row align={"middle"} justify={"space-evenly"}>
         <Col span={6}>Exchanges</Col>
-        <Col span={6}>24h Trade Volume</Col>
+        <Col span={6}>Current Pirce</Col>
         <Col span={6}>Markets</Col>
         <Col span={6}>Change</Col>
-      </Row> */}
-      {/*
-      <Row>
-         {exchangesList.map((exchange) => (
-          <Col span={24}>
-            <Collapse>
-              <Panel
-                key={exchange.uuid}
-                showArrow={false}
-                header={(
-                  <Row key={exchange.uuid}>
-                    <Col span={6}>
-                      <Text><strong>{exchange.rank}.</strong></Text>
-                      <Avatar className="exchange-image" src={exchange.iconUrl} />
-                      <Text><strong>{exchange.name}</strong></Text>
-                    </Col>
-                    <Col span={6}>${millify(exchange.volume)}</Col>
-                    <Col span={6}>{millify(exchange.numberOfMarkets)}</Col>
-                    <Col span={6}>{millify(exchange.marketShare)}%</Col>
-                  </Row>
-                  )}
-              >
-                {HTMLReactParser(exchange.description || '')}
-              </Panel>
-            </Collapse>
-          </Col>
-        ))} 
       </Row>
-        */}
+      <Row>
+        {exchangesList.map((exchange) => {
+          const { uuid, rank, iconUrl, name, numberOfMarkets, btcPrice, price } = exchange;
+
+          return (
+            <Col span={24} style={{ margin: "1rem 0" }}>
+              <Collapse>
+                <Panel
+                  key={uuid}
+                  showArrow={false}
+                  header={
+                    <Row key={uuid} align={"middle"} justify={"space-around"}>
+                      <Col span={6}>
+                        <Text>
+                          <strong>{rank}.</strong>
+                        </Text>
+                        <Avatar className="exchange-image" src={iconUrl} />
+                        <Text>
+                          <strong>{name}</strong>
+                        </Text>
+                      </Col>
+                      <Col style={{textAlign:"start"}} span={6}>${millify(price)}</Col>
+                      <Col style={{textAlign:"start"}} span={6}>{millify(numberOfMarkets)}</Col>
+                      <Col style={{textAlign:"start"}} span={6}>{millify(btcPrice)}%</Col>
+                    </Row>
+                  }
+                >
+                  {HTMLReactParser(exchange.description || "")}
+                </Panel>
+              </Collapse>
+            </Col>
+          );
+        })}
+      </Row>
     </>
   );
 };
