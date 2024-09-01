@@ -1,10 +1,10 @@
 import { useEffect, useState, useTransition } from "react";
-import { Row, Col, Typography, Card, Avatar, Select, Skeleton } from "antd";
+import { Row, Col, Card, Select, Skeleton } from "antd";
 
 import { useGetCryptoNewsQuery } from "../../services/cryptoNewsApi";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import NewsCard from "./NewsCard";
-const { Text, Title } = Typography;
+
 const { Option } = Select;
 
 const News = ({ simplefied }) => {

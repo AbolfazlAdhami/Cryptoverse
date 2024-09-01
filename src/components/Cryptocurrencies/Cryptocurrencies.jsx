@@ -1,4 +1,4 @@
-import React, { useDeferredValue, useEffect, useState, useTransition } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import { Row, Col, Card, Input, Skeleton } from "antd";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import { CryptoCard } from "../";
